@@ -5,7 +5,7 @@ services:
     build: .
     container_name: kz-csgo
     volumes: 
-      - "/raid/kz-csgo:/home/steam/csgo"
+      - "./kz-csgo:/home/steam/csgo"
     ports:
       - "27015:27015/udp"
       - "27015:27015/tcp"
