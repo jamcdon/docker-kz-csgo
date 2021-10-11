@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+  app:
+    build: .
+    container_name: kz-csgo
+    volumes: 
+      - "/raid/kz-csgo:/home/steam/csgo"
+    ports:
+      - "27015:27015/udp"
+      - "27015:27015/tcp"
+    environment:
+      SERVER_HOSTNAME: ${SERVER_HOSTNAME}
+      RCON_PASSWORD: "${RCON_PASSWORD}"
+      STEAM_ACCOUNT: ${STEAM_ACCOUNT}
+      AUTHKEY: ${AUTHKEY}
+      MAXPLAYERS: ${MAXPLAYERS}
+      SOURCEMOD_ADMINS: ${SOURCEMOD_ADMINS}
+      TV_ENABLE: 0
+      LAN: 0
+      RETAKES: 0
+      IP: 0.0.0.0
+      PORT: 27015
+      TICKRATE: 128
+      FPS_MAX: 300
+      GAME_TYPE: ${GAME_TYPE}
+      GAME_MODE: ${GAME_MODE}
+      WORKSHOP_START_MAP: ${WORKSHOP_START_MAP}
+      HOST_WORKSHOP_COLLECTION: ${HOST_WORKSHOP_COLLECTION}
+      MAP: ""
+      MAPGROUP: ""
